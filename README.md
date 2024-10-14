@@ -34,6 +34,10 @@ Este projeto é um jogo da memória simples e divertido com tema de Halloween. O
 
 
 
+https://github.com/user-attachments/assets/a6f44381-3aaf-47df-ad3c-1d3559c45dae
+
+
+
 ## 📝 Explicação do Código
 
 ### Manipulação do DOM com JavaScript

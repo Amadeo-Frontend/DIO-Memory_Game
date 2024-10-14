@@ -1,4 +1,4 @@
-const emojis = [
+const emojis = [ 
   "👹",
   "👻",
   "☠️",
@@ -19,6 +19,41 @@ const emojis = [
 
 let openCards = [];
 const gameContainer = document.querySelector(".game");
+
+
+const flipSound = new Audio("/src/sounds/flip.wav");
+const matchSound = new Audio("/src/sounds/match.wav");
+const errorSound = new Audio("/src/sounds/error.wav");
+const bgMusic = new Audio("/src/sounds/background.mp3");
+
+
+bgMusic.loop = true;
+bgMusic.volume = 0.2;
+
+let musicPlaying = true;
+
+
+window.addEventListener('load', function() {
+  bgMusic.play().catch(function(error) {
+    console.log('Autoplay bloqueado. O usuário precisa interagir com a página primeiro.');
+  });
+});
+
+function toggleMusic() {
+  if (musicPlaying) {
+    bgMusic.pause();
+    musicPlaying = false;
+    // Atualiza o ícone do botão para indicar que o som está desligado
+    document.querySelector('.music-btn').textContent = '🔇';
+  } else {
+    bgMusic.play().catch(function(error) {
+      console.log('Autoplay bloqueado. O usuário precisa interagir com a página primeiro.');
+    });
+    musicPlaying = true;
+    // Atualiza o ícone do botão para indicar que o som está ligado
+    document.querySelector('.music-btn').textContent = '🔊';
+  }
+}
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -53,6 +88,10 @@ function handleClick() {
     !this.classList.contains("boxOpen") &&
     !this.classList.contains("boxMatch")
   ) {
+    // Reproduz o som de virar a carta
+    flipSound.currentTime = 0;
+    flipSound.play();
+
     this.classList.add("boxOpen");
     this.innerHTML = this.dataset.emoji;
     openCards.push(this);
@@ -72,12 +111,20 @@ function checkMatch() {
   const [firstCard, secondCard] = openCards;
 
   if (firstCard.dataset.emoji === secondCard.dataset.emoji) {
+    // Reproduz o som de correspondência
+    matchSound.currentTime = 0;
+    matchSound.play();
+
     firstCard.classList.add("boxMatch");
     secondCard.classList.add("boxMatch");
 
     firstCard.onclick = null;
     secondCard.onclick = null;
   } else {
+    // Reproduz o som de erro
+    errorSound.currentTime = 0;
+    errorSound.play();
+
     firstCard.classList.add("shake");
     secondCard.classList.add("shake");
 

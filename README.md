@@ -1,16 +1,18 @@
 # 🎃 Halloween Memory Game 🎃
 
-Bem-vindo ao **Halloween Memory Game**, um jogo da memória temático de Halloween desenvolvido em HTML, CSS e JavaScript. Teste sua memória encontrando todos os pares de cartas assustadoras! 👻🧛🧟‍♂️
+Bem-vindo ao **Halloween Memory Game**, um jogo da memória temático de Halloween desenvolvido em HTML, CSS e JavaScript. Teste sua memória encontrando todos os pares de cartas assustadoras enquanto desfruta de efeitos sonoros imersivos! 👻🧛🧟‍♂️
 
 ## 🎯 Visão Geral
 
-Este projeto é um jogo da memória simples e divertido com tema de Halloween. O objetivo é encontrar todos os pares de cartas correspondentes o mais rápido possível. Quando dois cartões não correspondem, eles tremem para indicar o erro. Ao encontrar todos os pares, uma notificação aparece para parabenizá-lo pela vitória! 🥳
+Este projeto é um jogo da memória simples e divertido com tema de Halloween. O objetivo é encontrar todos os pares de cartas correspondentes o mais rápido possível. Agora, com **efeitos sonoros** e **música de fundo**, a experiência é ainda mais envolvente. Quando dois cartões não correspondem, eles tremem para indicar o erro. Ao encontrar todos os pares, uma notificação aparece para parabenizá-lo pela vitória! 🥳
 
 ## 🚀 Funcionalidades
 
 - **Embaralhamento Aleatório**: As cartas são embaralhadas a cada novo jogo.
 - **Animação de Virada**: As cartas viram com uma animação suave.
 - **Efeito de Shake**: Quando dois cartões não correspondem, eles tremem.
+- **Efeitos Sonoros**: Sons são reproduzidos ao virar cartas, ao encontrar pares correspondentes e ao errar.
+- **Música de Fundo**: Uma música ambiente é tocada durante o jogo, com opção para ativar ou desativar.
 - **Notificação de Vitória**: Um toast aparece quando todos os pares são encontrados.
 - **Reinício do Jogo**: Opção para reiniciar o jogo a qualquer momento.
 
@@ -18,31 +20,29 @@ Este projeto é um jogo da memória simples e divertido com tema de Halloween. O
 
 - **HTML5**: Estrutura do jogo.
 - **CSS3**: Estilização e animações.
-- **JavaScript**: Lógica do jogo e manipulação do DOM.
+- **JavaScript**: Lógica do jogo, manipulação do DOM e gerenciamento de áudio.
 
 ## 🎮 Como Jogar
 
 1. Abra o jogo (<a href="https://dio-memory-game.vercel.app/">Clique Aqui</a>).
-2. Clique em uma carta para virá-la.
-3. Clique em outra carta para tentar encontrar o par correspondente.
-4. Se as cartas corresponderem, elas permanecerão viradas.
-5. Se não corresponderem, elas irão tremer e virarão de volta após a animação.
-6. Repita até encontrar todos os pares.
-7. Ao vencer, um toast aparecerá no canto superior direito.
+2. Aproveite a **música de fundo** que começa automaticamente (pode ser necessário interagir com a página dependendo do navegador).
+3. Para silenciar ou reativar a música de fundo, clique no botão de som no canto superior esquerdo.
+4. Clique em uma carta para virá-la e ouça o **som de virar**.
+5. Clique em outra carta para tentar encontrar o par correspondente.
+6. Se as cartas corresponderem, elas permanecerão viradas e um **som de correspondência** será reproduzido.
+7. Se não corresponderem, elas irão tremer, um **som de erro** será tocado, e as cartas virarão de volta após a animação.
+8. Repita até encontrar todos os pares.
+9. Ao vencer, um toast aparecerá no canto superior direito.
 
 ## 📷 Demonstração
 
-
-
-https://github.com/user-attachments/assets/a6f44381-3aaf-47df-ad3c-1d3559c45dae
-
-
+*Aqui você pode inserir capturas de tela ou GIFs mostrando o jogo em ação, incluindo os novos botões e elementos relacionados ao áudio.*
 
 ## 📝 Explicação do Código
 
 ### Manipulação do DOM com JavaScript
 
-O JavaScript desempenha um papel crucial no funcionamento do jogo, sendo responsável por criar dinamicamente os elementos, gerenciar a lógica do jogo e responder às interações do usuário.
+O JavaScript desempenha um papel crucial no funcionamento do jogo, sendo responsável por criar dinamicamente os elementos, gerenciar a lógica do jogo, responder às interações do usuário e controlar os efeitos sonoros.
 
 #### 1. **Embaralhamento das Cartas**
 
@@ -67,16 +67,28 @@ Quando duas cartas estão abertas:
 
 - **Correspondência Correta**:
   - As cartas permanecem viradas.
+  - Um **som de correspondência** é reproduzido.
   - Os eventos de clique são removidos dessas cartas.
 - **Correspondência Incorreta**:
   - As cartas tremem usando uma animação de shake.
+  - Um **som de erro** é tocado.
   - Após a animação, as cartas são viradas de volta.
 
 #### 5. **Controle de Estado**
 
 Durante a verificação, cliques adicionais são desabilitados para evitar interferências. Após a comparação, os cliques são reabilitados.
 
-#### 6. **Verificação de Vitória**
+#### 6. **Adição de Efeitos Sonoros**
+
+- **Elementos de Áudio Dinâmicos**: Os sons são gerenciados dinamicamente pelo JavaScript, criando objetos de áudio para cada efeito sonoro e para a música de fundo.
+- **Efeitos Sonoros nos Eventos**:
+  - **Virar Carta**: Um som é tocado ao virar cada carta.
+  - **Correspondência Correta**: Ao encontrar um par, um som de sucesso é reproduzido.
+  - **Correspondência Incorreta**: Se as cartas não correspondem, um som de erro é tocado.
+- **Música de Fundo**: Uma música ambiente toca durante o jogo, iniciando automaticamente ao carregar a página (dependendo das políticas do navegador, pode ser necessário interagir com a página primeiro).
+- **Controle de Música**: Um botão fixo no canto superior esquerdo permite que o jogador ative ou desative a música de fundo a qualquer momento, atualizando o ícone de acordo com o estado (🔊 para ligado, 🔇 para desligado).
+
+#### 7. **Verificação de Vitória**
 
 O jogo verifica se todas as cartas foram correspondidas. Se sim, uma notificação (toast) aparece, e o jogo pode ser reiniciado.
 
@@ -115,9 +127,15 @@ Ao vencer o jogo:
 - **Smartphones**: O layout se ajustará para ocupar a largura da tela, com cartas menores e textos ajustados.
 - **Pequenos Smartphones**: O jogo permanecerá funcional, com elementos adequadamente dimensionados.
 
+## 🎶 Considerações sobre Áudio
+
+- **Compatibilidade de Navegadores**: Alguns navegadores podem bloquear a reprodução automática de áudio. Se a música de fundo não iniciar automaticamente, interaja com a página (clicando em qualquer lugar) ou use o botão de som para ativá-la.
+- **Formatos de Áudio**: Os sons são fornecidos em formatos amplamente suportados para garantir compatibilidade.
+- **Controle de Volume**: O volume padrão dos sons e da música de fundo foi ajustado para proporcionar uma experiência agradável, mas pode variar dependendo do dispositivo.
+
 ## 🤝 Contribuições
 
-Contribuições são bem-vindas Se você encontrar um bug, tiver uma sugestão de melhoria ou quiser adicionar uma nova funcionalidade, sinta-se à vontade para criar um issue ou pull request. Siga estas etapas:
+Contribuições são bem-vindas! Se você encontrar um bug, tiver uma sugestão de melhoria ou quiser adicionar uma nova funcionalidade, sinta-se à vontade para criar um issue ou pull request. Siga estas etapas:
 
 1. Faça um fork do repositório.
 2. Crie um novo branch com sua contribuição (`git checkout -b feature/minha-contribuicao`).
@@ -125,9 +143,8 @@ Contribuições são bem-vindas Se você encontrar um bug, tiver uma sugestão d
 4. Faça push para o branch (`git push origin feature/minha-contribuicao`).
 5. Abra um Pull Request.
 
-## ⚙ Suporte 
+## ⚙ Suporte
 
 Se você encontrar algum problema ou tiver dúvidas sobre o uso deste projeto, por favor, abra um issue para discussão.
 
 Desenvolvido com ❤️ por Amadeo Bon para contribuir com a comunidade. Boa navegação!
-

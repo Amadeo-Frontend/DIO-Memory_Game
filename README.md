@@ -22,7 +22,7 @@ Este projeto é um jogo da memória simples e divertido com tema de Halloween. O
 
 ## 🎮 Como Jogar
 
-1. Abra o jogo em seu navegador.
+1. Abra o jogo (<a href="https://dio-memory-game.vercel.app/">Clique Aqui</a>).
 2. Clique em uma carta para virá-la.
 3. Clique em outra carta para tentar encontrar o par correspondente.
 4. Se as cartas corresponderem, elas permanecerão viradas.
@@ -31,6 +31,10 @@ Este projeto é um jogo da memória simples e divertido com tema de Halloween. O
 7. Ao vencer, um toast aparecerá no canto superior direito.
 
 ## 📷 Demonstração
+
+
+
+https://github.com/user-attachments/assets/a6f44381-3aaf-47df-ad3c-1d3559c45dae
 
 
 

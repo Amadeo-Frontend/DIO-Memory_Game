@@ -108,6 +108,13 @@ Ao vencer o jogo:
 - **Barra de Progresso**: Uma barra visual indica o tempo restante antes do toast desaparecer.
 - **Animação Sincronizada**: A duração da animação da barra corresponde ao tempo de exibição do toast.
 
+## 📱 Testando a Responsividade
+
+- **Desktop**: As cartas manterão o tamanho máximo definido, e o layout permanecerá semelhante ao original.
+- **Tablets**: As cartas e textos serão levemente reduzidos para caberem adequadamente.
+- **Smartphones**: O layout se ajustará para ocupar a largura da tela, com cartas menores e textos ajustados.
+- **Pequenos Smartphones**: O jogo permanecerá funcional, com elementos adequadamente dimensionados.
+
 ## 🤝 Contribuições
 
 Contribuições são bem-vindas Se você encontrar um bug, tiver uma sugestão de melhoria ou quiser adicionar uma nova funcionalidade, sinta-se à vontade para criar um issue ou pull request. Siga estas etapas:

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hallowen Memory Game</title>
+    <link
+      rel="shortcut icon"
+      href="./src/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./src/styles/reset.css" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Hallowen Memory Game</h2>
+      <div class="game"></div>
+      <button class="Btn" onclick="startLoading()">RESET GAME</button>
+      <div class="spinner" id="spinner" style="display: none"></div>
+    </div>
+    <div class="toast" id="winToast" style="display: none">
+      Você venceu!
+      <div class="progress"></div>
+    </div>
+
+    <script src="./src/scripts/engine.js" defer></script>
+  </body>
+</html>

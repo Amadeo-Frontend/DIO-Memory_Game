@@ -24,7 +24,7 @@ const flipSound = new Audio("/src/sounds/flip.wav");
 const matchSound = new Audio("/src/sounds/match.wav");
 const errorSound = new Audio("/src/sounds/error.wav");
 const bgMusic = new Audio("/src/sounds/background.mp3");
-const witchLaughSound = new Audio("/src/sounds/quest_finish.wav");
+const questFinishSound = new Audio("/src/sounds/quest_finish.wav");
 
 bgMusic.loop = true;
 bgMusic.volume = 0.2;
@@ -156,9 +156,8 @@ function enableClicks() {
 }
 
 function showToast() {
-  // Reproduz o som da risada da bruxa
-  witchLaughSound.currentTime = 0;
-  witchLaughSound.play();
+  questFinishSound.currentTime = 0;
+  questFinishSound.play();
 
   const toast = document.getElementById("winToast");
   const progressBar = toast.querySelector(".progress");

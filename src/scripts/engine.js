@@ -29,26 +29,29 @@ const questFinishSound = new Audio("/src/sounds/quest_finish.wav");
 bgMusic.loop = true;
 bgMusic.volume = 0.2;
 
-let musicPlaying = true;
+let musicPlaying = false;
 
-window.addEventListener('load', function() {
-  bgMusic.play().catch(function(error) {
-    console.log('Autoplay bloqueado. O usuário precisa interagir com a página primeiro.');
-  });
+// Função para iniciar a música após a interação do usuário
+window.addEventListener('click', function() {
+  if (!musicPlaying) {
+    bgMusic.play().catch(function(error) {
+      console.log('Autoplay bloqueado. O usuário precisa interagir com a página primeiro.');
+    });
+    musicPlaying = true;
+    document.querySelector('.music-btn').textContent = '🔊';
+  }
 });
 
 function toggleMusic() {
   if (musicPlaying) {
     bgMusic.pause();
     musicPlaying = false;
-    // Atualiza o ícone do botão para indicar que o som está desligado
     document.querySelector('.music-btn').textContent = '🔇';
   } else {
     bgMusic.play().catch(function(error) {
       console.log('Autoplay bloqueado. O usuário precisa interagir com a página primeiro.');
     });
     musicPlaying = true;
-    // Atualiza o ícone do botão para indicar que o som está ligado
     document.querySelector('.music-btn').textContent = '🔊';
   }
 }
@@ -62,8 +65,7 @@ function shuffle(array) {
     currentIndex--;
 
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
+      array[randomIndex], array[currentIndex]
     ];
   }
 
@@ -86,7 +88,6 @@ function handleClick() {
     !this.classList.contains("boxOpen") &&
     !this.classList.contains("boxMatch")
   ) {
-    // Reproduz o som de virar a carta
     flipSound.currentTime = 0;
     flipSound.play();
 
@@ -109,7 +110,6 @@ function checkMatch() {
   const [firstCard, secondCard] = openCards;
 
   if (firstCard.dataset.emoji === secondCard.dataset.emoji) {
-    // Reproduz o som de correspondência
     matchSound.currentTime = 0;
     matchSound.play();
 
@@ -119,7 +119,6 @@ function checkMatch() {
     firstCard.onclick = null;
     secondCard.onclick = null;
   } else {
-    // Reproduz o som de erro
     errorSound.currentTime = 0;
     errorSound.play();
 

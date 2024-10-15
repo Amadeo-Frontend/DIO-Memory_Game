@@ -40,7 +40,7 @@ window.addEventListener('click', function() {
     musicPlaying = true;
     document.querySelector('.music-btn').textContent = '🔊';
   }
-});
+},{ once: true });
 
 function toggleMusic() {
   if (musicPlaying) {

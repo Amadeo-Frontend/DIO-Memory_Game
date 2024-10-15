@@ -36,7 +36,11 @@ Este projeto é um jogo da memória simples e divertido com tema de Halloween. O
 
 ## 📷 Demonstração
 
-*Aqui você pode inserir capturas de tela ou GIFs mostrando o jogo em ação, incluindo os novos botões e elementos relacionados ao áudio.*
+
+
+https://github.com/user-attachments/assets/5c16453d-1f76-49b2-bae4-066d8813dcc3
+
+
 
 ## 📝 Explicação do Código
 

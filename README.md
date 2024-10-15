@@ -1,4 +1,4 @@
-# 🎃 Halloween Memory Game 🎃
+# <a href="https://emoji.gg/emoji/97472-halloweencats"><img src="https://cdn3.emoji.gg/emojis/97472-halloweencats.gif" width="64px" height="64px" alt="HalloweenCats"></a> Halloween Memory Game 
 
 Bem-vindo ao **Halloween Memory Game**, um jogo da memória temático de Halloween desenvolvido em HTML, CSS e JavaScript. Teste sua memória encontrando todos os pares de cartas assustadoras enquanto desfruta de efeitos sonoros imersivos! 👻🧛🧟‍♂️
 
@@ -36,7 +36,11 @@ Este projeto é um jogo da memória simples e divertido com tema de Halloween. O
 
 ## 📷 Demonstração
 
-*Aqui você pode inserir capturas de tela ou GIFs mostrando o jogo em ação, incluindo os novos botões e elementos relacionados ao áudio.*
+
+
+https://github.com/user-attachments/assets/5c16453d-1f76-49b2-bae4-066d8813dcc3
+
+
 
 ## 📝 Explicação do Código
 

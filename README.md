@@ -151,4 +151,4 @@ Contribuições são bem-vindas! Se você encontrar um bug, tiver uma sugestão 
 
 Se você encontrar algum problema ou tiver dúvidas sobre o uso deste projeto, por favor, abra um issue para discussão.
 
-Desenvolvido com ❤️ por Amadeo Bon para contribuir com a comunidade. Boa navegação!
+Desenvolvido com <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Sparkling%20Heart.png" alt="Sparkling Heart" width="25" height="25" /> por Amadeo Bon para contribuir com a comunidade. Boa navegação!

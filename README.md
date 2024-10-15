@@ -1,4 +1,4 @@
-# [![halloween_pumpkinn](https://cdn3.emoji.gg/emojis/87164-halloween-pumpkinn.gif)](https://emoji.gg/emoji/87164-halloween-pumpkinn) Halloween Memory Game [![halloween_pumpkinn](https://cdn3.emoji.gg/emojis/87164-halloween-pumpkinn.gif)](https://emoji.gg/emoji/87164-halloween-pumpkinn)
+# <a href="https://emoji.gg/emoji/97472-halloweencats"><img src="https://cdn3.emoji.gg/emojis/97472-halloweencats.gif" width="64px" height="64px" alt="HalloweenCats"></a> Halloween Memory Game 
 
 Bem-vindo ao **Halloween Memory Game**, um jogo da memória temático de Halloween desenvolvido em HTML, CSS e JavaScript. Teste sua memória encontrando todos os pares de cartas assustadoras enquanto desfruta de efeitos sonoros imersivos! 👻🧛🧟‍♂️
 

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "DoubleFeature";
+  src: url("/src/fonts/DoubleFeature20.ttf") format("truetype");
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -40,6 +45,22 @@ body {
   outline: none;
 }
 
+#gameTimer,
+#bestTimes {
+  font-family: "DoubleFeature", sans-serif;
+  letter-spacing: .3rem;
+  font-size: 2em;
+  font-weight: 400;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: #b20000;
+  font-size: 1.2em;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 777;
+}
 
 .container {
   position: relative;
@@ -53,9 +74,10 @@ body {
 }
 
 h2 {
+  font-family: 'DoubleFeature', sans-serif;
   font-size: 2.5em;
   color: #ffffff;
-  text-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -10px 20px #ff8000,
+  text-shadow: 0 -1px 4px #000000, 0 -2px 10px rgb(182, 182, 148), 0 -10px 20px #ff8000,
     0 -18px 40px #f00;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -137,6 +159,8 @@ h2 {
 }
 
 .Btn {
+  font-family: "DoubleFeature", sans-serif;
+  letter-spacing: .5rem;
   width: 100%;
   max-width: 430px;
   height: 40px;
@@ -146,7 +170,7 @@ h2 {
   background-color: rgb(15, 15, 15);
   border: none;
   border-radius: 8px;
-  color: white;
+  color: #b20000;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
@@ -161,6 +185,7 @@ h2 {
   position: absolute;
   content: "";
   background-color: white;
+  color: #404040;
   border-radius: 50%;
   left: -100%;
   top: 0;
@@ -195,7 +220,8 @@ h2 {
 .toast {
   position: fixed;
   top: 20px;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #333;
   color: #fff;
   padding: 15px 30px;
@@ -205,7 +231,11 @@ h2 {
   transition: opacity 0.5s ease-in-out;
   z-index: 1000;
   min-width: 250px;
-  overflow: hidden;
+  text-align: center;
+}
+
+.toast.show {
+  opacity: 1;
 }
 
 .toast .progress {
@@ -238,6 +268,12 @@ h2 {
   h2 {
     font-size: 2em;
   }
+
+  #gameTimer,
+  #bestTimes {
+    font-size: 1em;
+    padding: 8px;
+  }
 }
 
 /* Smartphones (até 767px) */
@@ -263,6 +299,12 @@ h2 {
   h2 {
     font-size: 1.8em;
   }
+
+  #gameTimer,
+  #bestTimes {
+    font-size: 0.9em;
+    padding: 6px;
+  }
 }
 
 /* Pequenos Smartphones (até 480px) */
@@ -285,5 +327,11 @@ h2 {
 
   h2 {
     font-size: 1.5em;
+  }
+
+  #gameTimer,
+  #bestTimes {
+    font-size: 0.8em;
+    padding: 5px;
   }
 }

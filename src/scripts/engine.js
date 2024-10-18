@@ -1,4 +1,4 @@
-const emojis = [ 
+const emojis = [
   "👹",
   "👻",
   "☠️",
@@ -18,7 +18,13 @@ const emojis = [
 ];
 
 let openCards = [];
+let timer;
+let startTime;
+let elapsedTime = 0;
+
 const gameContainer = document.querySelector(".game");
+const timerElement = document.getElementById("gameTimer");
+const toast = document.getElementById("winToast");
 
 const flipSound = new Audio("/src/sounds/flip.wav");
 const matchSound = new Audio("/src/sounds/match.wav");
@@ -31,28 +37,35 @@ bgMusic.volume = 0.2;
 
 let musicPlaying = false;
 
-// Função para iniciar a música após a interação do usuário
-window.addEventListener('click', function() {
-  if (!musicPlaying) {
-    bgMusic.play().catch(function(error) {
-      console.log('Autoplay bloqueado. O usuário precisa interagir com a página primeiro.');
-    });
-    musicPlaying = true;
-    document.querySelector('.music-btn').textContent = '🔊';
-  }
-},{ once: true });
+window.addEventListener(
+  "click",
+  function () {
+    if (!musicPlaying) {
+      bgMusic.play().catch(function (error) {
+        console.log(
+          "Autoplay bloqueado. O usuário precisa interagir com a página primeiro."
+        );
+      });
+      musicPlaying = true;
+      document.querySelector(".music-btn").textContent = "🔊";
+    }
+  },
+  { once: true }
+);
 
 function toggleMusic() {
   if (musicPlaying) {
     bgMusic.pause();
     musicPlaying = false;
-    document.querySelector('.music-btn').textContent = '🔇';
+    document.querySelector(".music-btn").textContent = "🔇";
   } else {
-    bgMusic.play().catch(function(error) {
-      console.log('Autoplay bloqueado. O usuário precisa interagir com a página primeiro.');
+    bgMusic.play().catch(function (error) {
+      console.log(
+        "Autoplay bloqueado. O usuário precisa interagir com a página primeiro."
+      );
     });
     musicPlaying = true;
-    document.querySelector('.music-btn').textContent = '🔊';
+    document.querySelector(".music-btn").textContent = "🔊";
   }
 }
 
@@ -65,7 +78,8 @@ function shuffle(array) {
     currentIndex--;
 
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]
+      array[randomIndex],
+      array[currentIndex],
     ];
   }
 
@@ -82,7 +96,23 @@ for (let i = 0; i < shuffledEmojis.length; i++) {
   gameContainer.appendChild(box);
 }
 
+function startTimer() {
+  startTime = Date.now();
+  timer = setInterval(() => {
+    elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+    timerElement.textContent = `Tempo: ${elapsedTime}s`;
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timer);
+}
+
 function handleClick() {
+  if (!timer) {
+    startTimer();
+  }
+
   if (
     openCards.length < 2 &&
     !this.classList.contains("boxOpen") &&
@@ -136,7 +166,8 @@ function checkMatch() {
   openCards = [];
 
   if (document.querySelectorAll(".boxMatch").length === emojis.length) {
-    showToast();
+    stopTimer();
+    showToast(elapsedTime);
   }
 }
 
@@ -154,32 +185,6 @@ function enableClicks() {
   });
 }
 
-function showToast() {
-  questFinishSound.currentTime = 0;
-  questFinishSound.play();
-
-  const toast = document.getElementById("winToast");
-  const progressBar = toast.querySelector(".progress");
-  progressBar.style.animation = "none";
-  void progressBar.offsetWidth;
-  progressBar.style.animation = "progressBar 1.5s linear forwards";
-
-  toast.style.display = "block";
-
-  void toast.offsetWidth;
-
-  toast.style.opacity = 1;
-
-  setTimeout(() => {
-    toast.style.opacity = 0;
-
-    setTimeout(() => {
-      toast.style.display = "none";
-      startLoading();
-    }, 500);
-  }, 1500);
-}
-
 function startLoading() {
   document.querySelector(".Btn").style.display = "none";
   const toast = document.getElementById("winToast");
@@ -190,4 +195,27 @@ function startLoading() {
   setTimeout(function () {
     window.location.reload();
   }, 1500);
+}
+
+function showToast() {
+  questFinishSound.currentTime = 0;
+  questFinishSound.play();
+
+  const toast = document.getElementById("winToast");
+
+  toast.style.display = "block";
+  toast.style.opacity = 1;
+  setTimeout(() => {
+    toast.style.opacity = 0;
+
+    setTimeout(() => {
+      toast.style.display = "none";
+      document.getElementById("btn").style.display = "none";
+      document.getElementById("spinner").style.display = "block";
+
+      setTimeout(() => {
+        startLoading();
+      }, 1500);
+    }, 500);
+  }, 2000);
 }

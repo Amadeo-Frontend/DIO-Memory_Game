@@ -11,10 +11,7 @@
       property="og:description"
       content="Desafie sua memória com cartas assustadoras no Halloween Memory Game! Encontre todos os pares e divirta-se."
     />
-    <meta
-      property="og:url"
-      content="https://dio-memory-game.vercel.app/"
-    />
+    <meta property="og:url" content="https://dio-memory-game.vercel.app/" />
     <meta property="og:type" content="website" />
     <title>Halloween Memory Game</title>
     <link
@@ -30,10 +27,11 @@
     <div class="container">
       <h2>Halloween Memory Game</h2>
       <div class="game"></div>
-      <button class="Btn" onclick="startLoading()">RESET GAME</button>
+      <button class="Btn" id="btn" onclick="startLoading()">RESET GAME</button>
       <div class="spinner" id="spinner" style="display: none"></div>
     </div>
-    <div class="toast" id="winToast" style="display: none">
+    <div id="gameTimer">Time: 0s</div>
+    <div class="toast show" id="winToast" style="display: none">
       You Win!
       <div class="progress"></div>
     </div>

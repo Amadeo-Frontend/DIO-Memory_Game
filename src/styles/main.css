@@ -4,6 +4,7 @@
 }
 
 body {
+  cursor: url("../images/halloween-candy-svgrepo-com.svg"), default ;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +15,15 @@ body {
   background-size: cover;
   user-select: none;
   margin: 0;
+  
+}
+
+button,
+a,
+img:hover,
+button:hover,
+a:hover{
+  cursor: url("../images/halloween-candy.png"), auto;
 }
 
 .message {
@@ -45,8 +55,7 @@ body {
   outline: none;
 }
 
-#gameTimer,
-#bestTimes {
+#gameTimer {
   font-family: "DoubleFeature", sans-serif;
   letter-spacing: .3rem;
   font-size: 2em;
@@ -60,6 +69,23 @@ body {
   padding: 10px;
   border-radius: 8px;
   z-index: 777;
+}
+
+#github-icon{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+  background: rgba(241, 241, 241, 0.411);
+  border-radius: 16px;
+  z-index: 777;
+  transition: transform  0.3s ease;
+
+}
+
+#github-icon:hover{
+  background: rgba(175, 175, 175, 0.5);
+  transform: scale(1.08);
 }
 
 .container {
@@ -333,5 +359,15 @@ h2 {
   #bestTimes {
     font-size: 0.8em;
     padding: 5px;
+  }
+
+  .music-btn{
+    width: 30px;
+    height: 30px;
+  }
+
+  #github-icon{
+    width: 30px;
+    height: 30px;
   }
 }

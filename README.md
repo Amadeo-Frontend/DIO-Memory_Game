@@ -147,6 +147,13 @@ Contribuições são bem-vindas! Se você encontrar um bug, tiver uma sugestão 
 4. Faça push para o branch (`git push origin feature/minha-contribuicao`).
 5. Abra um Pull Request.
 
+## 📈 Log de Atualizações
+
+### **16 de Abril de 2026**
+- **Cursores Customizados**: Redimensionamento dos cursores (`moss-arrow` e `zombie-hand`) para o tamanho padrão de **32x32 pixels**, garantindo uma estética mais polida e profissional.
+- **Precisão de Hotspot**: Ajuste fino do ponto de clique no cursor de mão zumbi para alinhar perfeitamente com a ponta do dedo.
+- **Efeito de Clique (UX)**: Implementação de feedback visual tátil (escala e brilho) ao clicar em cartas, botões e ícones, melhorando a interatividade do jogo.
+
 ## ⚙ Suporte
 
 Se você encontrar algum problema ou tiver dúvidas sobre o uso deste projeto, por favor, abra um issue para discussão.

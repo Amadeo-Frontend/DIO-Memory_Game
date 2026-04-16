@@ -4,7 +4,7 @@
 }
 
 body {
-  cursor: url("../images/halloween-candy-svgrepo-com.svg"), default ;
+  cursor: url("../images/cursors/moss-arrow-32.png") 0 0, auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,26 @@ a,
 img:hover,
 button:hover,
 a:hover{
-  cursor: url("../images/halloween-candy.png"), auto;
+  cursor: url("../images/cursors/zombie-hand-32.png") 3 3, pointer;
+}
+
+/* Efeito de clique global */
+.Btn:active,
+.music-btn:active,
+.item:active,
+#github-icon:active {
+  transform: scale(0.95);
+  filter: brightness(0.8);
+  transition: transform 0.05s ease;
+}
+
+.item:active {
+  transform: rotateY(180deg) scale(0.95);
+}
+
+.item.boxOpen:active,
+.item.boxMatch:active {
+  transform: rotateY(0deg) scale(0.95);
 }
 
 .message {
